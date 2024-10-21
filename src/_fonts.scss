@@ -1,0 +1,40 @@
+$family: 	'Rubik';
+$path: 		'fonts/Rubik';
+$format:	'woff2';
+
+$weights: (
+	300: 'Rubik-Light',
+	400: 'Rubik-Regular',
+	500: 'Rubik-Medium',
+	700: 'Rubik-Bold',
+);
+
+$italic-weights: (
+	300: 'Rubik-LightItalic',
+);
+
+//normal font style
+@each $weight, $file in $weights {
+	@font-face {
+		font-family: $family;
+		src: url('#{$path}/#{$file}.#{$format}') format($format);
+		font-weight: $weight;
+		font-style: normal;
+		font-display: swap;
+	}
+}
+
+//italic font style
+@each $weight, $file in $italic-weights {
+	@font-face {
+		font-family: $family;
+		src: url('#{$path}/#{$file}.#{$format}') format($format);
+		font-weight: $weight;
+		font-style: italic;
+		font-display: swap;
+	}
+}
+
+
+
+
